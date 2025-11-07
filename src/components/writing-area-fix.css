@@ -1,0 +1,132 @@
+/* Writing Area Bottom Row Fix */
+
+/* Fix for the main writing layout to ensure full height visibility */
+.enhanced-writing-layout {
+  height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+/* Ensure the writing area container takes full available height */
+.writing-route {
+  height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+/* Fix for the writing layout content to use remaining space */
+.writing-layout-content {
+  flex: 1 !important;
+  min-height: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+/* Ensure the main writing area uses all available space */
+.enhanced-writing-layout > div:first-child {
+  flex: 1 !important;
+  min-height: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+/* Fix for the writing area component itself */
+.writing-area-container {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+/* Ensure textarea and content areas are properly sized */
+.writing-area-container textarea,
+.writing-area-container .content-area {
+  flex: 1 !important;
+  min-height: 0 !important;
+  resize: none !important;
+  overflow-y: auto !important;
+}
+
+/* Fix for any status bars or bottom elements */
+.status-bar,
+.writing-status-bar,
+.plan-summary {
+  flex-shrink: 0 !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+/* Ensure proper spacing and visibility for bottom elements */
+.enhanced-writing-layout .plan-summary {
+  margin-bottom: 0 !important;
+  padding-bottom: 1rem !important;
+}
+
+/* Fix for mobile responsiveness */
+@media (max-width: 768px) {
+  .enhanced-writing-layout,
+  .writing-route,
+  .writing-layout-content {
+    height: 100vh !important;
+    height: 100dvh !important; /* Dynamic viewport height for mobile */
+  }
+}
+
+/* Additional fix for viewport height issues */
+.app-content-wrapper {
+  height: 100vh !important;
+  height: 100dvh !important;
+  overflow: hidden !important;
+}
+
+/* Ensure proper scrolling within the writing area only */
+.enhanced-interactive-text-editor {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+.enhanced-interactive-text-editor textarea {
+  flex: 1 !important;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+  resize: none !important;
+}
+
+/* Fix for any floating or absolute positioned elements */
+.control-panel {
+  position: relative !important;
+  flex-shrink: 0 !important;
+}
+
+/* Ensure bottom padding for better visibility */
+.enhanced-interactive-text-editor textarea {
+  padding-bottom: 2rem !important;
+}
+
+/* Fix for the main content area to prevent overflow */
+.main-route-content {
+  overflow-y: auto !important;
+  height: calc(100vh - 64px) !important; /* Adjust based on header height */
+}
+
+/* Specific fix for the writing page layout */
+body:has(.writing-route) {
+  overflow: hidden !important;
+}
+
+.writing-route .enhanced-writing-layout {
+  height: calc(100vh - 80px) !important; /* Account for header */
+}
+
+/* Emergency fallback for height issues */
+.enhanced-writing-layout,
+.writing-area-container,
+.enhanced-interactive-text-editor {
+  min-height: 500px !important;
+}

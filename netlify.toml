@@ -1,0 +1,24 @@
+# netlify.toml (root-based app)
+
+[build]
+  command   = "npm ci && npm run build"
+  publish   = "dist"                 # dist created by Vite
+  functions = "netlify/functions"    # <repo-root>/netlify/functions
+
+[functions]
+  node_bundler = "esbuild"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# API proxy redirects - must come before SPA fallback
+[[redirects]]
+  from = "/api/*"
+  to   = "/.netlify/functions/:splat"
+  status = 200
+
+# SPA fallback - this should be the last redirect rule
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
