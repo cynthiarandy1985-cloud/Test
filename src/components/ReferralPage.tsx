@@ -149,7 +149,7 @@ const ReferralPage: React.FC = () => {
         <header className="text-center py-10">
           <GradientText>Refer & Earn Rewards</GradientText>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Share your unique link with friends. When they sign up and make their first payment, you earn rewards!
+            Share your unique link with friends. When they sign up and subscribe to a paid plan, you earn rewards!
           </p>
         </header>
 
